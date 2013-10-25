@@ -55,6 +55,7 @@ if node['ibm_integration_bus']['account_password']
     retry_delay 10
   end
 end
+
 user "Create user #{account_username} to be used for administering IIB" do
   action :create
   shell "/bin/bash"
@@ -94,7 +95,7 @@ template "/etc/init.d/IIB-#{iibnode_name}" do
            })
 end
 
-remote_file "Download the runtime install image package from: #{package_url} to: #{package_download}"  do
+remote_file "Download the install image package from: #{package_url} to: #{package_download}"  do
   path "#{package_download}"
   source "#{package_url}"
   retries 30
@@ -105,6 +106,15 @@ remote_file "Download the runtime install image package from: #{package_url} to:
     action :create_if_missing
   end
   end
+
+ruby_block "Checking the downloaded install image package from: #{package_download} has content" do
+  action :run
+  block do
+    if File.exist?("#{package_download}") && File.size("#{package_download}") == 0
+      raise "Downloaded install package is invalid. Check the URL #{package_url} is correct"
+    end
+  end
+end
 
 directory "Remove unpacked runtime image if it exists" do
       action :delete
