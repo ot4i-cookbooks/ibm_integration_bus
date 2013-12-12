@@ -11,12 +11,16 @@
 #     IBM - initial implementation
 #
 ################################################################################
-default['ibm_integration_bus']['package_site_url'] = nil
-default['ibm_integration_bus']['package_name']     = "9.0.0-IIB-LINUXX64-DEVELOPER.tar.gz"
-default['ibm_integration_bus']['account_username'] = "iibuser"
-default['ibm_integration_bus']['account_password'] = nil
-default['ibm_integration_bus']['iib_nodes']        = nil
-
-
-
-
+# Definition IBM_Integration_Bus::iib_remove_install_package
+# 
+# Remove unpacked files
+#
+################################################################################
+define :iib_remove_install_package do
+	unpack_dir     = "#{params[:unpack_dir]}"	
+	directory "Remove unpacked tool image" do
+		  action :delete
+		  recursive true
+		  path "#{unpack_dir}"
+	end
+end

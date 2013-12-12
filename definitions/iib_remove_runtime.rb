@@ -11,12 +11,23 @@
 #     IBM - initial implementation
 #
 ################################################################################
-default['ibm_integration_bus']['package_site_url'] = nil
-default['ibm_integration_bus']['package_name']     = "9.0.0-IIB-LINUXX64-DEVELOPER.tar.gz"
-default['ibm_integration_bus']['account_username'] = "iibuser"
-default['ibm_integration_bus']['account_password'] = nil
-default['ibm_integration_bus']['iib_nodes']        = nil
+# Definition IBM_Integration_Bus::iib_remove_runtime
+# 
+# Remove any existing iib runtime
+#
+################################################################################
+define :iib_remove_runtime do
 
+  directory "Remove IBM Integration Bus install directory if it exists" do
+    action :delete
+    recursive true
+    path "/opt/ibm/mqsi"
+  end
 
+  directory "Remove IE02 if it exists" do
+    action :delete
+    recursive true
+    path "/opt/ibm/IE02"
+  end  
 
-
+end

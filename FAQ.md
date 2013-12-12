@@ -4,6 +4,8 @@ FAQ for the `ibm_integration_bus` cookbook
 [Can I run the `ibm_integration_bus` recipes on a machine that already has IIB installed?](#Q1)
 
 [Can the `ibm_integration_bus` recipes be used to install other editions of IIB other than the Developer's edition?](#Q2)
+
+[Do the `ibm_integration_bus` recipes work on Red Hat Enterprise Linux (RHEL) 5?](#Q2)
     
 ------------------------------------------
 ##Answers:
@@ -15,3 +17,11 @@ Yes, but it is not recommended at the moment. The chef recipes will remove any i
 <a name="Q2">Can the `ibm_integration_bus` recipes be used to install other editions of IIB other than the Developer's edition?</a>
 
 The current version can install only IBM Integration Bus for Developers. However, this limitation exists only because the installation package for other editions contains .tar files that have a slightly different structure. Support for other editions will be added in the future.
+
+
+<a name="Q3">Do the `ibm_integration_bus` recipes work on Red Hat Enterprise Linux (RHEL) 5?</a>
+
+The recipes have not been tested on RHEL 5 but there is no reason why they should not work. 
+
+
+

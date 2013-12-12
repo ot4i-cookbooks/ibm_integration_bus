@@ -1,0 +1,49 @@
+{
+  "id": "default_iibnode",
+  "qmgrListenerPort": "2414",
+  "node": {
+    "name": "IB9NODE",
+    "properties": {
+    "basicProperties": [
+        {
+          "value": "inactive",
+          "name": "AdminSecurity" 
+        },
+        {
+          "value": "true",
+          "name": "webAdminEnabled"
+        },
+        {
+          "value": "4414",
+          "name": "webAdminHTTPListenerPort"
+        }
+     ],
+     "advancedProperties": [
+        {
+          "value": "advanced",
+          "name": "operationMode"
+        },
+    
+        {
+          "value": "IB9QMGR",
+          "name": "queueManager"
+        },
+        {
+          "value": "7080",
+          "name": "httpListenerPort"
+        }
+      ],
+      "deployedProperties": [
+        
+      ]
+    },
+    "executionGroups": {
+      "type": "executionGroups",
+      "executionGroup": [
+        {
+          "name": "default"
+        }
+      ]
+    }
+  }
+}
