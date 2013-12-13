@@ -25,6 +25,10 @@ define :iib_install_toolkit  do
   #
   iib_install_32bit_libs;
   
+	log "IBM Integration Toolkit install log can be found in the /var/ibm/InstallationManager/logs directory" do 
+		level :info
+	end
+	
   # Run the toolkit silent installer
   execute "Run IBM Integration Bus toolkit installer" do
     user "root"

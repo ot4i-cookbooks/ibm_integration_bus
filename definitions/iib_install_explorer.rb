@@ -25,6 +25,10 @@ define :iib_install_explorer do
   #
   iib_install_32bit_libs;
   
+	log "IBM Integration Explorer install log can be found in the /opt/ibm/mqsi/9.0.0.0 directory" do 
+		level :info
+	end
+	
   execute "Run IBM Integration Explorer installer" do
     user "root"
     returns [0]

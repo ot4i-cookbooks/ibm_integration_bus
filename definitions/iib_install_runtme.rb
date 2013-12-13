@@ -31,6 +31,11 @@ define :iib_install_runtime  do
     members "#{username}"
     append true
   end
+	
+	log "IBM Integration Bus runtime install log can be found in the /opt/ibm/mqsi/9.0.0.0 directory" do 
+		level :info
+	end
+	
   #
   # Everything is cleared and the IIB slient installer can be run
   #
