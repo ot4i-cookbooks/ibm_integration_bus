@@ -1,6 +1,6 @@
 `ibm_integration_bus` Cookbook
 ==========================
-[IBM® Integration Bus](http://www-03.ibm.com/software/products/us/en/integration-bus/), formerly known as WebSphere® Message Broker, is an enterprise service bus (ESB) providing connectivity and universal data transformation for service-oriented architecture (SOA) and non-SOA environments. Businesses of any size can eliminate point-to-point connections and batch processing regardless of platform, protocol, or data format.
+[IBM Integration Bus](http://www-03.ibm.com/software/products/us/en/integration-bus/), formerly known as WebSphere Message Broker, is an enterprise service bus (ESB) providing connectivity and universal data transformation for service-oriented architecture (SOA) and non-SOA environments. Businesses of any size can eliminate point-to-point connections and batch processing regardless of platform, protocol, or data format.
 
 
 You can find more information about using IBM Integration Bus from the [IBM Integration Bus Version 9.0 Information Center](http://pic.dhe.ibm.com/infocenter/wmbhelp/v9r0m0/index.jsp).
