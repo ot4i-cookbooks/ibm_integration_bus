@@ -29,7 +29,7 @@ evaluative purposes. You can [download](https://www14.software.ibm.com/webapp/iw
  
 ## Chef
 
-* Chef: 0.10.10+
+* Chef: 11.8.0 +
 
 ## Cookbooks
 No other cookbooks are required by this cookbook. The IBM WebSphere MQ product is installed as part of both the default and runtime recipes.
