@@ -1,12 +1,12 @@
 `ibm_integration_bus` Cookbook
 ==========================
-[IBM Integration Bus](http://www-03.ibm.com/software/products/us/en/integration-bus/), formerly known as WebSphere Message Broker, is an enterprise service bus (ESB) providing connectivity and universal data transformation for service-oriented architecture (SOA) and non-SOA environments. Businesses of any size can eliminate point-to-point connections and batch processing regardless of platform, protocol, or data format.
+[IBM Integration Bus](http://www-03.ibm.com/software/products/us/en/integration-bus/), previously known as WebSphere Message Broker, is an enterprise service bus (ESB) providing connectivity and universal data transformation for service-oriented architecture (SOA) and non-SOA environments. Businesses of any size can eliminate point-to-point connections and batch processing regardless of platform, protocol, or data format.
 
 
 You can find more information about using IBM Integration Bus from the [IBM Integration Bus Version 9.0 Information Center](http://pic.dhe.ibm.com/infocenter/wmbhelp/v9r0m0/index.jsp).
 
 
-Use this cookbook to install and configure all the components that you need to start developing applications with [IBM Integration Bus](http://www-03.ibm.com/software/products/us/en/integration-bus/), including:
+Use this cookbook to install and configure all of the components that you need to start developing applications with [IBM Integration Bus](http://www-03.ibm.com/software/products/us/en/integration-bus/), including:
 
 
 * IBM Integration Bus runtime component
@@ -14,19 +14,17 @@ Use this cookbook to install and configure all the components that you need to s
 * IBM Integration Bus Explorer  
 * All product prerequisites, including WebSphere MQ Version 7.5.0.1  
 
-The cookbook also creates a user account to manage the components, and 
-creates and configures all the components that are required for a running Integration Bus instance.
+The cookbook also creates a user account to manage the components, and creates and configures all the components that are required for a running Integration Bus instance.
 
-For answers to questions about this cookbook see the provided [FAQ](./FAQ.md).
+For answers to questions about this cookbook, see the provided [FAQ](./FAQ.md).
 
 
 Requirements
 ------------
-To use this cookbook, you must download the single package image for IBM Integration Bus and store it on an FTP or HTTP server that is accessible by the computer running the chef client.
+To use this cookbook, you must download the single package image for IBM Integration Bus and store it on an FTP server, HTTP server or local file system that is accessible by the computer that is running the Chef client.
 
-The IBM Integration Bus for Developers is a full-function version of the product, which you can use for 
-evaluative purposes. You can [download](https://www14.software.ibm.com/webapp/iwm/web/signup.do?source=swg-wmbfd&S_TACT=109KA7GW&S_CMP=web_opp_ibm_ws_appint_integrationbus&lang=en_US&S_PKG=dk) this version at no charge and you are free to use it for as long 
-as you require, within the terms of the license. 
+IBM Integration Bus for Developers is a full-function version of the product, which you can use for 
+evaluative purposes. You can [download](https://www14.software.ibm.com/webapp/iwm/web/signup.do?source=swg-wmbfd&S_TACT=109KA7GW&S_CMP=web_opp_ibm_ws_appint_integrationbus&lang=en_US&S_PKG=dk) this version at no charge and you are free to use it for as long as you require, within the terms of the license. 
 
  
 ## Chef
@@ -83,7 +81,7 @@ Attributes
   <tr>
     <td><tt>['ibm_integration_bus']['iib_nodes']</tt></td>
     <td>Array</td>
-    <td>A list of the names of iibnode databags to use for setting up IIB nodes on the machine. If the attribute is omitted then a default node is created called IB9NODE. An empty list of iibnode databags will result in no components being created.</td>
+    <td>A list of the names of iibnode databags to use for setting up IIB integration nodes on the machine. If the attribute is omitted, then a default integration node is created called IB9NODE. An empty list of iibnode databags will result in no components being created.</td>
     <td><tt>nil</tt></td>
   </tr>
 </table>
@@ -91,7 +89,7 @@ See [iibnode data bags](./DATABAGS.md) for details on how to create databags wit
 
 Usage
 -----
-Include `ibm_integration_bus` in your node's `run_list` to install and configure all IBM Integration Bus components. The `package_site_url` attribute must be set to the location of the downloaded Developer Edition installation package. [Download](https://www14.software.ibm.com/webapp/iwm/web/signup.do?source=swg-wmbfd&S_TACT=109KA7GW&S_CMP=web_opp_ibm_ws_appint_integrationbus&lang=en_US&S_PKG=dk) this package and put it onto an FTP or HTTP site that is accessible by the chef client running the recipes. The `package_site_url` points to the directory containing the install package and the full URL is generated by appending `package_site_url` and `package_name` together. For example: if `package_site_url` is `ftp://company_ftp_site.com/iib_packages` and  `package_name` is left to the default value of `9.0.0-IIB-LINUXX64-DEVELOPER.tar.gz` then the URL used is `ftp://company_ftp_site.com/iib_packages/9.0.0-IIB-LINUXX64-DEVELOPER.tar.gz`.
+Include `ibm_integration_bus` in your integration node's `run_list` to install and configure all IBM Integration Bus components. The `package_site_url` attribute must be set to the location of the downloaded Developer Edition installation package. [Download](https://www14.software.ibm.com/webapp/iwm/web/signup.do?source=swg-wmbfd&S_TACT=109KA7GW&S_CMP=web_opp_ibm_ws_appint_integrationbus&lang=en_US&S_PKG=dk) this package and put it onto an FTP or HTTP site that is accessible by the Chef client that is running the recipes. The `package_site_url` points to the directory containing the install package and the full URL is generated by appending `package_site_url` and `package_name` together. For example: if `package_site_url` is `ftp://company_ftp_site.com/iib_packages` and  `package_name` is left to the default value of `9.0.0-IIB-LINUXX64-DEVELOPER.tar.gz` then the URL used is `ftp://company_ftp_site.com/iib_packages/9.0.0-IIB-LINUXX64-DEVELOPER.tar.gz`.
 
 
 To install the full IBM Integration Bus:
@@ -165,7 +163,7 @@ To set up a password for the created user account:
 }
 ```
 
-To set specify a list of nodes to create based on their [iibnode data bags](./DATABAGS.md) names:
+To specify a list of integration nodes to create based on their [iibnode data bags](./DATABAGS.md) names:
 ```json
 {
   "name": "Account_Password",
@@ -190,14 +188,18 @@ To set specify a list of nodes to create based on their [iibnode data bags](./DA
 }
 ```
 
+Developing
+----------
+
+The cookbook provides [support for test](./TESTING.md) using Test Kitchen.
 
 License and Authors
 -------------------
 Copyright 2013 IBM Corp. under the [Eclipse Public license](http://www.eclipse.org/legal/epl-v10.html).
 
 * Author:: John Reeve <jreeve@uk.ibm.com>
-* Author:: Imran Shakir SHAKIMRA@uk.ibm.com
-* Author:: Simon Holdsworth simon_holdsworth@uk.ibm.com
+* Author:: Imran Shakir <SHAKIMRA@uk.ibm.com>
+* Author:: Simon Holdsworth Simon_Holdsworth@uk.ibm.com
 * Author:: Stephanie Strugnell stephanie_strugnell@uk.ibm.com
 * Author:: Charlotte Nash charshy_nash@uk.ibm.com
 
