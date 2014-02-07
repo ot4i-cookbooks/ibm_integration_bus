@@ -99,9 +99,9 @@ Notes on running the tests
 What tests exist?
 -----------------
 
-See the ibm\_integration\_bus_test cookbook's [README file](./test/cookbooks/ibm_integration_bus/README.md) for descriptions of the test cases and example data bag items used in testing.
+See the ibm\_integration\_bus_test cookbook's [README file](./test/cookbooks/ibm_integration_bus_test/README.md) for descriptions of the test cases and example data bag items used in testing.
 
 How do I extend the tests to verify my changes?
 -----------------------------------------------
 
-See the "Verifying New Function" section of the ibm\_integration\_bus_test cookbook's [README file](./test/cookbooks/ibm_integration_bus/README.md)
+See the "Verifying New Function" section of the ibm\_integration\_bus_test cookbook's [README file](./test/cookbooks/ibm_integration_bus_test/README.md)
