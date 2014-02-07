@@ -11,3 +11,6 @@ This file is used to list changes made in each version of the `ibm_integration_b
 -----
 - [John Reeve] - Add ability to allow IIB node parameters to be change from default values.
 
+1.0.2
+-----
+- [Imran Shakir] - Add Test Kitchen support

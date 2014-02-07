@@ -1,0 +1,45 @@
+{
+	"id": "web_admin_off",
+	"qmgrListenerPort": "6414",
+	"node": {
+		"name": "WAONODE",
+		"properties": {
+		  "basicProperties": [
+				{
+					"name": "AdminSecurity",
+					"value": "inactive"
+				},
+				{
+					"name": "webAdminEnabled",
+					"value": "false"
+				},
+				{
+					"name": "webAdminHTTPListenerPort",
+					"value": "4419"
+				}
+			],
+			"advancedProperties": [
+				{
+					"name": "operationMode",
+					"value": "advanced"
+				},
+				{
+					"name": "queueManager",
+					"value": "WAOQMGR"
+				},
+				{
+					"name": "httpListenerPort",
+					"value": "7084"
+				}
+			]
+		},
+		"executionGroups": {
+			"type": "executionGroups",
+			"executionGroup": [
+				{
+					"name": "default"
+				}
+			]
+		}
+	}
+}

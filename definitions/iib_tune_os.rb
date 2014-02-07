@@ -63,6 +63,11 @@ sed -i '/net.bridge.bridge-nf-call.*/ s/^/#/g' /etc/sysctl.conf
 sysctl -p
 sed -i '/net.bridge.bridge-nf-call.*/ s/#//g' /etc/sysctl.conf
 
+# sudoers - for MQ
+if [ -f /etc/sudoers ]; then
+    sed -i '/requiretty/ s/^.*$/#Defaults requiretty/g' /etc/sudoers
+fi
+
 EOS
 end
 end

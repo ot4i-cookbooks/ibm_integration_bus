@@ -1,0 +1,48 @@
+{
+	"id": "two_servers_scale",
+	"qmgrListenerPort": "1414",
+	"node": {
+		"name": "TSSNODE",
+		"properties": {
+		  "basicProperties": [
+				{
+					"name": "AdminSecurity",
+					"value": "inactive"
+				},
+				{
+					"name": "webAdminEnabled",
+					"value": "true"
+				},
+				{
+					"name": "webAdminHTTPListenerPort",
+					"value": "4415"
+				}
+			],
+			"advancedProperties": [
+				{
+					"name": "operationMode",
+					"value": "scale"
+				},
+				{
+					"name": "queueManager",
+					"value": "TSSQMGR"
+				},
+				{
+					"name": "httpListenerPort",
+					"value": "7081"
+				}
+			]
+		},
+		"executionGroups": {
+			"type": "executionGroups",
+			"executionGroup": [
+				{
+					"name": "srv_1"
+				},
+				{
+					"name": "srv_2"
+				}
+			]
+		}
+	}
+}

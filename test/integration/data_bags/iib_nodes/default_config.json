@@ -1,0 +1,23 @@
+{
+	"id": "default_config",
+	"qmgrListenerPort": "2414",
+	"node": {
+		"name": "IB9NODE",
+		"properties": {
+			"advancedProperties": [
+				{
+					"name": "queueManager",
+					"value": "IB9QMGR"
+				}
+			]
+		},
+		"executionGroups": {
+			"type": "executionGroups",
+			"executionGroup": [
+				{
+					"name": "default"
+				}
+			]
+		}
+	}
+}

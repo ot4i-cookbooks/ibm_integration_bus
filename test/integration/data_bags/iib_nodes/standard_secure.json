@@ -1,0 +1,45 @@
+{
+	"id": "standard_secure",
+	"qmgrListenerPort": "5414",
+	"node": {
+		"name": "SSNODE",
+		"properties": {
+		  "basicProperties": [
+				{
+					"name": "AdminSecurity",
+					"value": "active"
+				},
+				{
+					"name": "webAdminEnabled",
+					"value": "true"
+				},
+				{
+					"name": "webAdminHTTPListenerPort",
+					"value": "4418"
+				}
+			],
+			"advancedProperties": [
+				{
+					"name": "operationMode",
+					"value": "standard"
+				},
+				{
+					"name": "queueManager",
+					"value": "SSQMGR"
+				},
+				{
+					"name": "httpListenerPort",
+					"value": "7083"
+				}
+			]
+		},
+		"executionGroups": {
+			"type": "executionGroups",
+			"executionGroup": [
+				{
+					"name": "default"
+				}
+			]
+		}
+	}
+}

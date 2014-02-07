@@ -188,6 +188,14 @@ To specify a list of integration nodes to create based on their [iibnode data ba
 }
 ```
 
+Developing
+----------
+If you're interested in contributing to this project, please contact the authors.
+
+Testing
+----------
+The cookbook provides [support for test](./TESTING.md) using Test Kitchen.
+
 License and Authors
 -------------------
 Copyright 2013 IBM Corp. under the [Eclipse Public license](http://www.eclipse.org/legal/epl-v10.html).

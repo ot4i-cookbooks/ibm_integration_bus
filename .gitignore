@@ -1,0 +1,5 @@
+.kitchen/
+.kitchen.local.yml
+.jazzignore
+Berksfile.lock
+.project

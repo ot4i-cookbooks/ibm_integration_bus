@@ -1,0 +1,90 @@
+---
+driver_plugin: vagrant
+
+platforms:
+- name: ubuntu-12.04
+  driver_config:
+    box: opscode-ubuntu-12.04
+    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box
+    synced_folders: [ [ "C:/ChefCache", "/mnt/shared" ] ]
+    customize:
+      memory: 2048
+# - name: redhat-6
+  # driver_config:
+    # box: ibm-vagrant-redhat
+    # box_url: file:///C:/RHEL/ibm-vagrant-redhat64.box
+    # synced_folders: [ [ "C:/ChefCache", "/mnt/shared" ] ]
+    # customize:
+      # memory: 2048
+
+suites:
+# Tests that when the runtime recipe is run without giving the "iib_nodes" attributes, then a node that looks like
+# the toolkit's default configuration is created
+- name: default
+  run_list:
+    - recipe[minitest-handler]
+    - recipe[ibm_integration_bus_test]
+  attributes: {
+    "ibm_integration_bus": {
+      "package_site_url": "file:///mnt/shared"
+    }
+  }
+# Tests that if I specify an empty array as the "iib_nodes" attribute, then I get only a fresh install
+- name: no_nodes
+  run_list:
+    - recipe[minitest-handler]
+    - recipe[ibm_integration_bus_test::no_nodes]
+  attributes: {
+    "ibm_integration_bus": {
+      "package_site_url": "file:///mnt/shared",
+      "iib_nodes": [ ]
+    }
+  }
+# Tests that we can create a node, with a server in advanced mode
+- name: one_node_one_server
+  run_list:
+    - recipe[minitest-handler]
+    - recipe[ibm_integration_bus_test::one_node_one_server]
+  attributes: {
+    "ibm_integration_bus": {
+      "package_site_url": "file:///mnt/shared",
+      "iib_nodes": [ "default_config" ]
+    }
+  }
+# Tests that we can create two nodes, also that the first node is created correctly in express mode
+# with no servers, and that the second is created correctly in scale mode with two servers, these
+# also both have non-defaulting web-admin ports
+- name: two_nodes
+  run_list:
+    - recipe[minitest-handler]
+    - recipe[ibm_integration_bus_test::two_nodes]
+  attributes: {
+    "ibm_integration_bus": {
+      "package_site_url": "file:///mnt/shared",
+      "iib_nodes": [ "no_servers_express" , "two_servers_scale" ]
+    }
+  }
+# Tests that we can create a node in standard mode with one server and admin security turned on, here 
+# we also change the name of the user account, so that we can verify that functionality
+- name: admin_security
+  run_list:
+    - recipe[minitest-handler]
+    - recipe[ibm_integration_bus_test::admin_security]
+  attributes: {
+    "ibm_integration_bus": {
+      "package_site_url": "file:///mnt/shared",
+      "account_username": "iib2user",
+      "iib_nodes": [ "standard_secure" ]
+    }
+ }
+# Test we can create a node with webadmin turned off
+- name: no_web_admin_default
+  run_list:
+    - recipe[minitest-handler]
+    - recipe[ibm_integration_bus_test::no_web_admin_default]
+  attributes: {
+    "ibm_integration_bus": {
+      "package_site_url": "file:///mnt/shared",
+      "iib_nodes": [ "web_admin_off" ]
+    }
+  }
