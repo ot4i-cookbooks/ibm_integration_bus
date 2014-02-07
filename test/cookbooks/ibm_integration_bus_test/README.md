@@ -13,7 +13,7 @@ How the tests run
 
 The tests are described in the following different places:
 
-* The `.kitchen.yml` file that is contained [at the top level of the ibm\\_integration\_bus cookbook](../../.kitchen.yml). This specifies a set of "suites", each comprising a run-list and a set of attributes. Note that each suite specifies the minitest-handler cookbook, which is used to execute mini-test test cases after the Chef run.
+* The `.kitchen.yml` file that is contained at the top level of the `ibm_integration_bus` cookbook. This specifies a set of "suites", each comprising a run-list and a set of attributes. Note that each suite specifies the minitest-handler cookbook, which is used to execute mini-test test cases after the Chef run.
 * Some test suites specify the "iib_nodes" attribute of the cookbook, which specifies the data bag items that are descriptions of integration nodes to be created during the Chef run. These data bag items are kept in `ibm_integration_bus/test/integration/data_bags`.
 * All test suites specify a recipe in this cookbook. These recipes are run as part of the Chef run, and in turn call recipes in the ibm\_integration\_bus cookbook to create an installation. After the chef run is complete, the Chef handler for minitest looks for the `<recipe_name>_test.rb` file in the `files/default/tests/minitest` directory of this cookbook, and runs the tests specified in that file.
 * All test scripts call helper functions that are contained in the `files/default/tests/minitest/support` directory. These must have a `_helper` suffix. They provide useful common services.
