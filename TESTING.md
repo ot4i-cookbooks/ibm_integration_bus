@@ -5,7 +5,7 @@ The IBM Integration Bus cookbook supports tests through [Test Kitchen](http://ki
 
 To run these tests, you must download and install the following prerequisites:
 
-* [Ruby](./FAQ#Q4) (Version 1.9.3 was used for development on Windows and Ubuntu)
+* [Ruby](https://www.ruby-lang.org/en/) (Version 1.9.3 was used for development on Windows and Ubuntu)
 * [Vagrant](https://downloads.vagrantup.com/tags/v1.3.5) (Version 1.3.5 was used for development on Windows and Ubuntu)
 * [VirtualBox](https://www.virtualbox.org/wiki/Download_Old_Builds_4_1) (On Linux, installing via apt-get works giving version 4.1.12 at time of writing, on Windows install via the downloads page, version 4.1.18 was used for development)
 
