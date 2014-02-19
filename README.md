@@ -176,7 +176,7 @@ To specify a list of integration nodes to create based on their [iibnode data ba
       "package_site_url": "ftp://company_ftp_site.com/iib_packages",
       "account_username": "aUser",
       "account_password": "$1$GjlS21O/$cCVKEGE/qg4jjt.sJuwVK0",
-      "iib_nodes" [default_iibnode_databag]
+      "iib_nodes": ["default_iibnode_databag"]
     }
   },
   "chef_type": "role",
