@@ -35,8 +35,8 @@ def verify_runtime_install()
 	
 	# Check Integration Bus install directory exists
 	assert(
-		File.directory?("/opt/ibm/mqsi/9.0.0.0"),
-		"ERROR: Integration Bus install directory doesn't exist"
+		File.directory?("/opt/ibm/mqsi/9.0"),
+		"ERROR: Integration Bus install directory doesn't exist in expected location"
 	)
 	
 end
