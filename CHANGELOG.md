@@ -14,3 +14,7 @@ This file is used to list changes made in each version of the `ibm_integration_b
 1.0.2
 -----
 - [Imran Shakir] - Add Test Kitchen support
+
+1.0.3
+-----
+- [Alasdair Paton] - Support fixpack refreshes of IIB 9.0 Developer Edition
