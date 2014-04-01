@@ -42,7 +42,7 @@ define :iib_install_runtime  do
   #
   execute "Run IBM Integration Bus installer" do
     user "root"
-    returns [0,127]
+    returns [0,1,127]
     cwd "#{unpack_dir}"
     command "#{unpack_dir}/setuplinuxx64 -i silent -DLICENSE_ACCEPTED=TRUE -DUSER_INSTALL_DIR=/opt/ibm/mqsi/9.0"
   end
